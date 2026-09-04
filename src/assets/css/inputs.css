@@ -1,0 +1,15 @@
+/* MARK: INPUTS
+   https://drafts.csswg.org/selectors-4/#typedef-forgiving-selector-list
+   - Forgiving selector list
+   - Specificity == 0
+*/
+
+@layer inputs {
+  :where(button, input, select, textarea) {
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    color: currentColor;
+  }
+}

@@ -1,0 +1,42 @@
+/* MARK: TRANSITIONS
+
+   https://adactio.com/journal/21896
+   https://webkit.org/blog/7551/responsive-design-for-motion/
+   https://webkit.org/blog/16967/two-lines-of-cross-document-view-transitions-code-you-can-use-on-every-website-today/
+*/
+
+@layer transitions {
+  :root {
+    --transition-property:
+      display, color, opacity, visibility, background,
+      background-color, border-color;
+    --transition-timing-function: ease-in;
+    --transition-duration: 250ms;
+
+    /* https://html-css-tip-of-the-week.netlify.app/tip/interpolate-size/ */
+    /* https://12daysofweb.dev/2024/calc-size-and-interpolate-size/ */
+    interpolate-size: allow-keywords;
+  }
+
+  * {
+    transition-property: var(--transition-property);
+    transition-timing-function: var(--transition-timing-function);
+    transition-duration: var(--transition-duration);
+
+    transition-behavior: allow-discrete;
+  }
+
+  /* Accessibility feature */
+  @media (prefers-reduced-motion) {
+    * {
+      transition-duration: 0ms;
+    }
+  }
+
+  @starting-style {
+    * {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}

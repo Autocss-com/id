@@ -1,0 +1,6 @@
+{
+  "app-banner": ["banner", "banner"],
+  "header": { "app-logo": "IDLOGO", "app-user": "Sign-in" },
+  "nav": { "label": ["HOME", "ABOUT", "CLASSES", "POLICY", "CONTACT"] },
+  "footer": { "app-legal": "© AutoCSS", "app-version": "v.0.001" }
+}

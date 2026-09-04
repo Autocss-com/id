@@ -1,0 +1,174 @@
+/* MARK: LAYOUT
+*/
+@layer layout {
+  html,
+  body {
+    display: grid;
+    overflow: hidden;
+  }
+
+  app-container {
+    display: grid;
+    overflow: hidden;
+    grid-template-rows:
+      auto
+      auto
+      auto
+      minmax(0, 1fr)
+      auto
+      auto
+      auto;
+    grid-auto-rows: auto;
+    height: 100dvb;
+    /* grid-template-rows: auto auto auto minmax(0, 1fr) auto auto auto; */
+    /* --min-row-size: 1rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--min-row-size), 100%), 1fr)
+  ); */
+
+    app-banner {
+      display: grid;
+      justify-items: center;
+    }
+
+    header {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-auto-flow: column;
+      justify-content: space-between;
+
+      app-logo,
+      app-user {
+        padding-block: 0.5rem;
+        padding-inline: 1rem;
+      }
+    }
+
+    nav {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      justify-content: end;
+      gap: 0.5rem;
+
+      label {
+        display: grid;
+        position: relative;
+        /* place-items: center;
+       min-block-size: 2.75rem; */
+        padding-block: 0.5rem;
+        padding-inline: 1rem;
+        cursor: pointer;
+
+        > input {
+          position: absolute;
+          z-index: 1;
+          inset: 0;
+
+          inline-size: 100%;
+          block-size: 100%;
+
+          opacity: 0;
+          cursor: inherit;
+        }
+      }
+
+      label:is(:hover, :focus-within, :has(> input:checked)) {
+        background: color-mix(in srgb, currentColor 10%, Canvas);
+        outline: 0.0625rem solid currentColor;
+        outline-offset: -0.0625rem;
+      }
+
+      /* Vertical styles */
+      &:has(> label:last-child > input[type="checkbox"]:checked) {
+        grid-auto-flow: row;
+        grid-template-columns: minmax(0, 1fr);
+
+        justify-content: stretch;
+        justify-items: stretch;
+        align-content: start;
+      }
+    }
+
+    main {
+      display: grid;
+      overflow: hidden;
+      grid-template-rows: minmax(0, 1fr);
+
+      article {
+        display: grid;
+        /* Make scrollable */
+        overflow-y: auto;
+        align-content: start;
+
+        section {
+          display: grid;
+          margin-block: 1rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+          margin-inline: 1rem;
+          padding-block: 1rem;
+        }
+
+        p {
+          margin-inline: 1rem;
+          padding-block-end: 1rem;
+        }
+
+        ul,
+        li {
+          display: grid;
+          list-style-type: none;
+          padding-inline: 1rem;
+          padding-block-end: 1rem;
+        }
+      }
+    }
+
+    aside {
+      display: grid;
+      /* Hide by default. */
+      display: none;
+
+      /* Display only when both boundary children contain content. */
+      &:has(> :first-child:not(:empty)):has(> :last-child:not(:empty)) {
+        display: grid;
+      }
+
+      p {
+        margin-inline: 1rem;
+        padding-block-end: 1rem;
+      }
+    }
+
+    footer {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-auto-flow: column;
+      justify-content: space-between;
+
+      app-legal,
+      app-version {
+        padding-block: 0.5rem;
+        padding-inline: 1rem;
+      }
+    }
+  }
+
+  /* AUTO-GRID */
+  app-cards {
+    --min-row-size: 1rem;
+    --min-col-size: 10rem;
+
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--min-row-size), 100%), 1fr)
+    );
+  }
+}

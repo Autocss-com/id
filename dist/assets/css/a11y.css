@@ -1,0 +1,57 @@
+/* MARK: A11Y
+*/
+
+@layer a11y {
+  :root {
+    --outline-size: 0.25em;
+    --outline-style: dotted;
+    --outline-width: 0.0625em;
+    --outline-offset: -0.0625em;
+    --outline-color: var(--outline);
+    --outline-border-radius: var(--inner-radius);
+  }
+
+  :focus-visible {
+    --outline-size: max(0.0625rem, 0.15em);
+
+    outline: var(--outline-width, var(--outline-size))
+      var(--outline-style, solid) var(--outline-color, currentColor);
+    outline-offset: var(--outline-offset, var(--outline-size));
+  }
+
+  a:focus-visible {
+    outline-offset: 0.25em;
+    outline-width: 0.25em;
+    outline-color: currentColor;
+  }
+
+  /* https://css-tricks.com/almanac/properties/a/accent-color/
+   https://web.dev/articles/accent-color
+   --fg-accent is owned by color-theme-*.css (Part 2 of the modular color system).
+*/
+  :root {
+    scrollbar-color: var(--fg-accent) Canvas;
+    accent-color: var(--fg-accent);
+  }
+
+  :focus-visible {
+    outline-color: var(--fg-accent);
+  }
+
+  ::selection {
+    background-color: var(--fg-accent);
+  }
+
+  ::marker {
+    color: var(--fg-accent);
+  }
+
+  :is(
+    ::-webkit-calendar-picker-indicator,
+    ::-webkit-clear-button,
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button
+  ) {
+    color: var(--fg-accent);
+  }
+}

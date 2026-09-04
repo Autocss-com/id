@@ -1,0 +1,43 @@
+{
+  "section": [
+    {
+      "h1": "International Dance",
+      "li": [
+        "Classical ballet, ages 3 to adult",
+        "Vaganova and Cecchetti syllabus",
+        "Pointe preparation and pre-professional track",
+        "Open adult beginner classes, no experience needed",
+        "Annual spring performance at the Civic Theatre"
+      ],
+      "p": [
+        "A working studio for dancers who want the real thing. Small classes, live piano, and teachers who trained on the stages they are preparing you for.",
+        "Founded in 1998, International Dance has sent graduates to companies across four continents while keeping its doors open to anyone who wants to take a first class at forty.",
+        "Two sprung floors, natural light, and a barre with room to breathe."
+      ]
+    },
+    {
+      "h2": "This Season",
+      "p": [
+        "Winter term begins the second week of January and runs fourteen weeks through the spring showcase.",
+        "Placement for new students is by appointment. Bring soft shoes; we will tell you the rest.",
+        "Adult open classes need no registration. Arrive ten minutes early."
+      ]
+    },
+    {
+      "h2": "Our Teachers",
+      "p": [
+        "Every instructor has danced professionally. Every instructor is still in the studio five days a week.",
+        "Faculty trained at the Vaganova Academy, the Royal Ballet School, and the Paris Opera Ballet School.",
+        "Class sizes are capped at twelve so corrections are given by name, not to the room."
+      ]
+    },
+    {
+      "h2": "Visit the Studio",
+      "p": [
+        "Observation windows let parents watch without disrupting class.",
+        "Changing rooms, secure lockers, and a quiet study area for dancers between classes.",
+        "Street parking is free after six. The tram stops at the corner."
+      ]
+    }
+  ]
+}

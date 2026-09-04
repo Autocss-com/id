@@ -1,0 +1,12 @@
+/* MARK: DIAG
+*/
+@layer diag {
+  header,
+  main article,
+  main article section,
+  aside,
+  footer {
+    box-shadow: inset 0 0 0 1px
+      color-mix(in srgb, currentcolor 10%, transparent);
+  }
+}

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=Cinzel:wght@400..900&family=Electrolize&family=Geo:ital@0;1&family=Jura:wght@300..700&family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&family=Science+Gothic:wght@100..900&family=Smooch+Sans:wght@100..900&family=Tektur:wght@400..900&display=swap");
+
+/* MARK: TYPOGRAPHY 
+*/
+
+@layer typography {
+  :root {
+    font-family: Oxanium, system-ui, sans-serif;
+    font-size: 1.1rem;
+  }
+
+  /* https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/#container-query-fluid-type */
+  h1, h2, h3, h4 {
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    text-wrap: balance;
+    font-weight: 100;
+  }
+
+  ul, ol, dl, dt, dd, p, figure, blockquote {
+    /* hanging-punctuation: first last; */
+    text-wrap: pretty;
+  }
+}
