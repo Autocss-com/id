@@ -10,10 +10,10 @@ Live: https://autocss-com.github.io/id/
 ## What lives here
 - `index.html` — thin shell; links every shared asset from the CDN by absolute
   URL, ships an empty `<template>` (the component pool is pulled from the CDN),
-  and registers the service worker
+  and registers the service worker with a relative path (`./sw.js`)
 - `assets/data/*.json` — the content (`shell`, `home`, `about`, `classes`, `policy`, `contact`)
 - `sw.js` — the CDN's App Shell service worker, verbatim (a service worker must be
-  same-origin), so the site loads instantly and works offline from cache
+  same-origin). Network-first: always fresh online, still renders offline from cache
 
 ## How it works
 No framework, no build, no third-party services. The CDN front-end fetches this
