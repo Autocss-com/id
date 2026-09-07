@@ -97,5 +97,6 @@
       <template></template>
     </app-container>
     <script type="module" src="https://autocss-com.github.io/cdn/assets/js/app.js"></script>
-  </body>
+    <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+</body>
 </html>
